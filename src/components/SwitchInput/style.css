@@ -1,0 +1,40 @@
+.switch_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.switch_input {
+  display: none;
+}
+
+.switch_input:checked + div {
+  background-color: #ac51b5;
+}
+
+.switch_input:checked + div:before {
+  transform: translateX(26px);
+}
+.switch_slider {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 13px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.switch_slider:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: #65001c;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s ease;
+}
+.switch_status {
+  margin-left: 10px;
+  font-weight: bold;
+}

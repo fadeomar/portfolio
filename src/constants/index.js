@@ -38,6 +38,7 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  { id: "tools_section", title: "Tools" },
 ];
 
 const services = [
@@ -262,4 +263,42 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+// new
+const tools = [
+  {
+    name: "Box Shadow Generator",
+    slug: "box-shadow-generator",
+    description:
+      "Box Shadow Generator is very useful to generate css box shadows with all abilities to change the values and see the changes directly in the screen and copy the desired results you want or get some recommended values for box shadows you can use too try it now...",
+    tags: [
+      { name: "css", color: "blue-text-gradient" },
+      { name: "box-shadow", color: "green-text-gradient" },
+      { name: "generator", color: "green-pink-gradient" },
+    ],
+    image: carrent,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Car Rent",
+    description:
+      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: carrent,
+    source_code_link: "https://github.com/",
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects, tools };

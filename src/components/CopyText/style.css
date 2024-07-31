@@ -1,0 +1,17 @@
+.copy_text_container {
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.copy_text_helper {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+.copy_text_content {
+  white-space: pre-line;
+  color: navy;
+  box-shadow: -11px -4px 59px -9px rgba(0, 0, 0, 0.75) inset;
+  padding: 4px;
+}
