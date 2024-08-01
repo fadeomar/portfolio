@@ -1,0 +1,82 @@
+.CPG_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: #8d8d8d;
+
+  margin: 64px auto;
+  gap: 24px;
+  padding: 24px;
+  width: 100%;
+}
+.CPG_colored_div {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  box-shadow: 2px 4px 16px black;
+}
+
+.CPG_container {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  overflow: hidden;
+  box-shadow: 8px 8px 20px black;
+  padding: 10px;
+}
+
+.draggable_circle {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.draggable_circle .close-button {
+  display: none;
+}
+
+.draggable_circle:hover .close-button {
+  display: block;
+}
+
+.close-button {
+  position: absolute;
+  /* top: -15px; */
+  /* right: -15px; */
+  width: 14px;
+  height: 14px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 8px;
+  padding: 0;
+}
+
+.clip_path_text {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.CPG_add_button {
+  border: 1px solid gray;
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 2px 3px 4px black;
+  background: #6565d6;
+  transition: 0.3s all;
+}
+
+.CPG_add_button:active {
+  box-shadow: none;
+  border: 1px solid black;
+  background: rgba(0, 0, 0, 0.1);
+}

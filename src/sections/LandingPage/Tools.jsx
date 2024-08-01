@@ -15,12 +15,13 @@ const ToolCard = ({
   description,
   tags,
   image,
+  slug,
   source_code_link,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Link
-        to="/"
+        to={slug ? `/tools/${slug}` : "/"}
         className="flex items-center gap-2"
         onClick={() => {
           // setActive("");

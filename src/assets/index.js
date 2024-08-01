@@ -31,6 +31,9 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+// new
+import treeImg from "./tree.jpeg";
+import clipPathImg from "./clipPath.jpg";
 
 export {
   logo,
@@ -61,4 +64,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  // tree
+  treeImg,
+  clipPathImg,
 };

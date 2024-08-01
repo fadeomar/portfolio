@@ -1,0 +1,111 @@
+.SD_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0;
+  color: black;
+}
+
+.SD_input {
+  height: 42px;
+  display: inline-block;
+  font: inherit;
+  position: relative;
+  text-align: center;
+  color: white;
+
+  min-width: 2rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: 2rem;
+  box-shadow: inset 0 0.125rem #d3d0c9, inset -0.125rem 0 #d3d0c9,
+    inset 0 -0.125rem #d3d0c9;
+  cursor: pointer;
+  -webkit-transition: background 0.25s;
+  transition: background 0.25s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  box-shadow: inset 0 0 0 0.125rem #d3d0c9;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  box-shadow: inset 0 0.125rem #d3d0c9, inset 0.125rem 0 #d3d0c9,
+    inset -0.125rem 0 #d3d0c9, inset 0 -0.125rem #d3d0c9;
+}
+
+.SD_imput:hover {
+  background: #d3d0c9;
+  -webkit-transition: background 0;
+  transition: background 0;
+}
+.SD_imput:focus {
+  background: #100a09;
+  z-index: 100;
+  color: #d3d0c9;
+  outline: 0;
+  box-shadow: inset 0 0 0 0.125rem #100a09, 0 0 0 0.125rem #100a09;
+}
+
+.SD_switch_wrapper {
+  width: 100%;
+  margin: 24px 0;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+}
+
+.SD_switch_wrapper b,
+.SD_switch_wrapper label {
+  color: black;
+}
+.SD_switch_label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.SD_switch_input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.SD_switch_input:checked + .slider {
+  background-color: #2196f3;
+}
+.SD_switch_input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+.SD_switch_input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.SD_switch_span {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.SD_switch_span:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}

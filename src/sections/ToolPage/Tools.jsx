@@ -18,8 +18,10 @@ const ToolCard = ({
   slug,
   source_code_link,
 }) => {
+  console.log({ slug });
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+      <h1>ssssssssssssssssssssssssss</h1>
       <Link
         to={slug ? `/tools/${slug}` : "/"}
         className="flex items-center gap-2"
@@ -96,8 +98,8 @@ const Tools = () => {
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
-        {tools.map((project, index) => (
-          <ToolCard key={`project-${index}`} index={index} {...project} />
+        {tools.map((tool, index) => (
+          <ToolCard key={`tool-${index}`} index={index} {...tool} />
         ))}
       </div>
     </>
