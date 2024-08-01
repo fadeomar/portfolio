@@ -1,0 +1,166 @@
+.paint_container {
+  display: flex;
+  width: 100%;
+  max-width: 1050px;
+  gap: 10px;
+  padding: 10px;
+  background: #4a98f7;
+  color: black;
+  margin: 40px auto;
+}
+
+.paint_tool_board {
+  background: #fff;
+  border-radius: 7px;
+  width: 210px;
+  padding: 15px 22px 0;
+  color: black;
+}
+
+.paint_tool_board .row {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.paint_tool_board .row_color .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paint_tool_board .row_color .paint_option {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 3px;
+  position: relative;
+}
+
+.paint_tool_board .row_color .paint_option:nth-child(1) {
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+}
+
+.paint_tool_board .row_color .paint_option:nth-child(2) {
+  background-color: #000;
+}
+
+.paint_tool_board .row_color .paint_option:nth-child(3) {
+  background-color: #e02020;
+}
+
+.paint_tool_board .row_color .paint_option:nth-child(4) {
+  background-color: #6dd400;
+}
+
+.paint_tool_board .row_color .paint_option:nth-child(5) {
+  background-color: #4a98f7;
+}
+
+.paint_tool_board .row_color .paint_option.selected::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
+}
+
+.paint_tool_board .row_color .option:first-child.selected::before {
+  border-color: #ccc;
+}
+
+.paint_tool_board .row_color .option #color-picker {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.paint_options {
+  list-style: none;
+  margin: 10px 0 0 5px;
+  color: black;
+}
+
+.paint_options_flex {
+  list-style: none;
+  margin: 10px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paint_option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.paint_option:is(:hover, .active) img {
+  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg)
+    brightness(100%) contrast(100%);
+}
+
+.paint_option:where(span, label) {
+  color: #5a6168;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.paint_option:is(:hover, .active):where(span, label) {
+  color: #4a98f7;
+}
+
+.tools-board {
+  width: 210px;
+  padding: 15px 22px 0;
+}
+
+.buttons_row button {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 11px 0;
+  font-size: 0.9rem;
+  margin-bottom: 13px;
+  background: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.buttons_row .clear-canvas {
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+
+.buttons_row .clear-canvas:hover {
+  color: #fff;
+  background: #6c757d;
+}
+
+.buttons_row .save-img {
+  color: #4a98f7;
+  border: 1px solid #4a98f7;
+}
+
+.buttons_row .save-img:hover {
+  color: #6c757d;
+  background: #4a98f7;
+}
+
+.paint_drawing_board {
+  background: #fff;
+  border-radius: 7px;
+  flex: 1;
+}
+
+.paint_drawing_board canvas {
+  width: 100%;
+  height: 100%;
+}
