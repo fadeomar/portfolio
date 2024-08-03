@@ -41,7 +41,7 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
-  { id: "tools_section", title: "Tools" },
+  { id: "tools_section", title: "Tools", path: "/tools" },
 ];
 
 const services = [
@@ -308,6 +308,19 @@ const tools = [
       { name: "generator", color: "green-pink-gradient" },
     ],
     image: treeImg,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Photo Editor",
+    slug: "photo-editor",
+    description:
+      "Clip Path Generator is very useful to generate css box shadows with all abilities to change the values and see the changes directly in the screen and copy the desired results you want or get some recommended values for box shadows you can use too try it now...",
+    tags: [
+      { name: "css", color: "blue-text-gradient" },
+      { name: "clip-spath", color: "green-text-gradient" },
+      { name: "generator", color: "green-pink-gradient" },
+    ],
+    image: backend,
     source_code_link: "https://github.com/",
   },
   {

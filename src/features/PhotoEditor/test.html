@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Canvas Image Manipulation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      #container {
+        display: flex;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+      #controls {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        margin-right: 20px;
+      }
+      #controls label {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      #controls input[type="range"] {
+        width: 100%;
+      }
+      #controls button {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      #controls button:hover {
+        background-color: #0056b3;
+      }
+      #preview {
+        width: 100px;
+        height: 75px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      #canvas {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="controls">
+        <label>
+          Upload Image
+          <input type="file" id="imageInput" accept="image/*" />
+        </label>
+        <label>
+          Brightness
+          <input
+            type="range"
+            id="brightnessSlider"
+            min="0"
+            max="200"
+            value="100"
+          />
+        </label>
+        <label>
+          Contrast
+          <input
+            type="range"
+            id="contrastSlider"
+            min="0"
+            max="200"
+            value="100"
+          />
+        </label>
+        <label>
+          Saturation
+          <input
+            type="range"
+            id="saturationSlider"
+            min="0"
+            max="200"
+            value="100"
+          />
+        </label>
+        <label>
+          Opacity
+          <input
+            type="range"
+            id="opacitySlider"
+            min="0"
+            max="100"
+            value="100"
+          />
+        </label>
+        <label>
+          Blur
+          <input
+            type="range"
+            id="blurSlider"
+            min="0"
+            max="10"
+            value="0"
+            step="0.1"
+          />
+        </label>
+        <label>
+          Grayscale
+          <input
+            type="range"
+            id="grayscaleSlider"
+            min="0"
+            max="100"
+            value="0"
+          />
+        </label>
+        <label>
+          Sepia
+          <input type="range" id="sepiaSlider" min="0" max="100" value="0" />
+        </label>
+        <label>
+          Hue Rotate
+          <input
+            type="range"
+            id="hueRotateSlider"
+            min="0"
+            max="360"
+            value="0"
+          />
+        </label>
+        <label>
+          Invert
+          <input type="range" id="invertSlider" min="0" max="100" value="0" />
+        </label>
+        <label>
+          Rotation
+          <input type="range" id="rotationSlider" min="0" max="360" value="0" />
+        </label>
+        <button id="presetButton">Apply Preset</button>
+        <button id="resetButton">Reset</button>
+        <button id="downloadButton">Download Image</button>
+        <canvas id="preview"></canvas>
+      </div>
+      <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      const imageInput = document.getElementById("imageInput");
+      const brightnessSlider = document.getElementById("brightnessSlider");
+      const contrastSlider = document.getElementById("contrastSlider");
+      const saturationSlider = document.getElementById("saturationSlider");
+      const opacitySlider = document.getElementById("opacitySlider");
+      const blurSlider = document.getElementById("blurSlider");
+      const grayscaleSlider = document.getElementById("grayscaleSlider");
+      const sepiaSlider = document.getElementById("sepiaSlider");
+      const hueRotateSlider = document.getElementById("hueRotateSlider");
+      const invertSlider = document.getElementById("invertSlider");
+      const rotationSlider = document.getElementById("rotationSlider");
+      const presetButton = document.getElementById("presetButton");
+      const resetButton = document.getElementById("resetButton");
+      const downloadButton = document.getElementById("downloadButton");
+      const previewCanvas = document.getElementById("preview");
+      const previewCtx = previewCanvas.getContext("2d");
+
+      let img = new Image();
+      let brightness = 100;
+      let contrast = 100;
+      let saturation = 100;
+      let opacity = 100;
+      let blur = 0;
+      let grayscale = 0;
+      let sepia = 0;
+      let hueRotate = 0;
+      let invert = 0;
+      let rotation = 0;
+
+      imageInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            img = new Image();
+            img.onload = () => {
+              applyEffects();
+              updatePreview();
+            };
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      brightnessSlider.addEventListener("input", () => {
+        brightness = brightnessSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      contrastSlider.addEventListener("input", () => {
+        contrast = contrastSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      saturationSlider.addEventListener("input", () => {
+        saturation = saturationSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      opacitySlider.addEventListener("input", () => {
+        opacity = opacitySlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      blurSlider.addEventListener("input", () => {
+        blur = blurSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      grayscaleSlider.addEventListener("input", () => {
+        grayscale = grayscaleSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      sepiaSlider.addEventListener("input", () => {
+        sepia = sepiaSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      hueRotateSlider.addEventListener("input", () => {
+        hueRotate = hueRotateSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      invertSlider.addEventListener("input", () => {
+        invert = invertSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      rotationSlider.addEventListener("input", () => {
+        rotation = rotationSlider.value;
+        applyEffects();
+        updatePreview();
+      });
+
+      presetButton.addEventListener("click", () => {
+        brightness = 120;
+        contrast = 150;
+        saturation = 130;
+        opacity = 100;
+        blur = 2;
+        grayscale = 20;
+        sepia = 30;
+        hueRotate = 45;
+        invert = 10;
+        rotation = 0;
+        brightnessSlider.value = brightness;
+        contrastSlider.value = contrast;
+        saturationSlider.value = saturation;
+        opacitySlider.value = opacity;
+        blurSlider.value = blur;
+        grayscaleSlider.value = grayscale;
+        sepiaSlider.value = sepia;
+        hueRotateSlider.value = hueRotate;
+        invertSlider.value = invert;
+        rotationSlider.value = rotation;
+        applyEffects();
+        updatePreview();
+      });
+
+      resetButton.addEventListener("click", () => {
+        brightness = 100;
+        contrast = 100;
+        saturation = 100;
+        opacity = 100;
+        blur = 0;
+        grayscale = 0;
+        sepia = 0;
+        hueRotate = 0;
+        invert = 0;
+        rotation = 0;
+        brightnessSlider.value = brightness;
+        contrastSlider.value = contrast;
+        saturationSlider.value = saturation;
+        rotationSlider.value = rotation;
+        blurSlider.value = blur;
+        grayscaleSlider.value = grayscale;
+        sepiaSlider.value = sepia;
+        hueRotateSlider.value = hueRotate;
+        invertSlider.value = invert;
+        opacitySlider.value = opacity;
+        applyEffects();
+        updatePreview();
+      });
+
+      downloadButton.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "filtered_image.png";
+        link.click();
+      });
+
+      //   `blur(${state.blur}) grayscale(${state.grayscale})
+      // brightness(${state.brightness}) contrast(${state.contrast})
+      // hue-rotate(${state.hueRotate}) invert(${state.invert}) opacity(${state.opacity})
+      // saturate(${state.saturate}) sepia(${state.sepia})`
+
+      function applyEffects() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.filter = `blur(${blur}px) grayscale(${grayscale}%) brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%)`;
+
+        ctx.globalAlpha = opacity / 100;
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate((rotation * Math.PI) / 180);
+        ctx.drawImage(img, -img.width / 2, -img.height / 2);
+        ctx.restore();
+      }
+
+      function updatePreview() {
+        previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+        previewCtx.save();
+        previewCtx.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%)`;
+        previewCtx.globalAlpha = opacity / 100;
+        previewCtx.translate(previewCanvas.width / 2, previewCanvas.height / 2);
+        previewCtx.rotate((rotation * Math.PI) / 180);
+        const scale = Math.min(
+          previewCanvas.width / img.width,
+          previewCanvas.height / img.height
+        );
+        previewCtx.scale(scale, scale);
+        previewCtx.drawImage(img, -img.width / 2, -img.height / 2);
+        previewCtx.restore();
+      }
+
+      function updatePreview() {
+        previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+        previewCtx.save();
+        previewCtx.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%)`;
+        previewCtx.globalAlpha = opacity / 100;
+        previewCtx.translate(previewCanvas.width / 2, previewCanvas.height / 2);
+        previewCtx.rotate((rotation * Math.PI) / 180);
+        const scale = Math.min(
+          previewCanvas.width / img.width,
+          previewCanvas.height / img.height
+        );
+        previewCtx.scale(scale, scale);
+        previewCtx.drawImage(img, -img.width / 2, -img.height / 2);
+        previewCtx.restore();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+.PE_wrapper {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: black;
+}
+.PE_container {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+.PE_controls {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-right: 20px;
+}
+.PE_controls label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.PE_controls input[type="range"] {
+  width: 100%;
+}
+.PE_controls button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.PE_controls button:hover {
+  background-color: #0056b3;
+}
+#preview {
+  width: 100px;
+  height: 75px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#canvas {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}

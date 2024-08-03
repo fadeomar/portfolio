@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -8,6 +8,8 @@ import { logo, menu, close } from "../assets";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const { pathname } = useLocation();
+  console.log({ pathname });
   return (
     <nav
       className={`${styles.paddingX} w-full items-center py-5 fixed top-0 z-20 bg-primary`}
@@ -36,7 +38,11 @@ const Navbar = () => {
              hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              {pathname === "/" ? (
+                <a href={`#${link.id}`}>{link.title}</a>
+              ) : (
+                <Link to={link.path}>{link.title}</Link>
+              )}
             </li>
           ))}
         </ul>

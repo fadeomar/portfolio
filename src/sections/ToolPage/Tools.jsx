@@ -18,10 +18,8 @@ const ToolCard = ({
   slug,
   source_code_link,
 }) => {
-  console.log({ slug });
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <h1>ssssssssssssssssssssssssss</h1>
       <Link
         to={slug ? `/tools/${slug}` : "/"}
         className="flex items-center gap-2"
