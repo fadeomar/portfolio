@@ -34,7 +34,8 @@ import tripguide from "./tripguide.png";
 // new
 import treeImg from "./tree.jpeg";
 import clipPathImg from "./clipPath.jpg";
-
+import wordsCountImg from "./wc.png";
+import scrabbleFeatured from "./scrabble-featured.jpg";
 export {
   logo,
   backend,
@@ -67,4 +68,6 @@ export {
   // tree
   treeImg,
   clipPathImg,
+  wordsCountImg,
+  scrabbleFeatured,
 };
