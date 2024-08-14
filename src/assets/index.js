@@ -36,6 +36,7 @@ import treeImg from "./tree.jpeg";
 import clipPathImg from "./clipPath.jpg";
 import wordsCountImg from "./wc.png";
 import scrabbleFeatured from "./scrabble-featured.jpg";
+import CubeImage from "./cube.png";
 export {
   logo,
   backend,
@@ -70,4 +71,5 @@ export {
   clipPathImg,
   wordsCountImg,
   scrabbleFeatured,
+  CubeImage,
 };
