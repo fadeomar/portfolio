@@ -7,6 +7,7 @@ import ScrabbleWordFinder from "./ScrabbleWordFinder";
 import AnimationGenerator from "./AnimationGenerator";
 import SolarSystem from "./SolarSystem";
 import CubeTraffic from "./CubeTraffic";
+import Tetris from "./Tetris";
 
 const featuresMap = {
   "box-shadow-generator": (props) => <BoxShadowGenerator {...props} />,
@@ -18,6 +19,7 @@ const featuresMap = {
   "css-animation-generator": (props) => <AnimationGenerator {...props} />,
   "solar-system": (props) => <SolarSystem {...props} />,
   "cube-traffic": (props) => <CubeTraffic {...props} />,
+  tetris: (props) => <Tetris {...props} />,
 };
 
 export { BoxShadowGenerator, ClipPathGenerator, featuresMap };
