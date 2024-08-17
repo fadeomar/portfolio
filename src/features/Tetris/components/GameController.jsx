@@ -63,6 +63,7 @@ const GameController = ({
       onKeyDown={onKeyDown}
       onKeyUp={onKeyUp}
       autoFocus
+      tabIndex="0"
     />
   );
 };
