@@ -222,12 +222,18 @@ const GameCanvas = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      width={375}
-      height={667}
-      style={{ backgroundColor: "white", display: "block", margin: "auto" }}
-    ></canvas>
+    <div style={{ paddingTop: 64 }}>
+      <canvas
+        ref={canvasRef}
+        width={375}
+        height={500}
+        style={{
+          backgroundColor: "white",
+          display: "block",
+          margin: "auto",
+        }}
+      ></canvas>
+    </div>
   );
 };
 
