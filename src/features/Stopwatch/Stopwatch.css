@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+.stopwatch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.time-display {
+  font-family: "Permanent Marker", cursive;
+  font-size: 48px;
+  color: transparent; /* This is necessary for the gradient effect */
+  background: linear-gradient(90deg, yellow, gray, red);
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari */
+  -webkit-text-fill-color: transparent; /* For Safari */
+  text-fill-color: transparent; /* For other browsers */
+  padding: 20px 40px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.time-display-animate {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

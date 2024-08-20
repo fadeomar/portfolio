@@ -96,7 +96,7 @@ const Tools = () => {
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
-        {tools.map((project, index) => (
+        {tools.slice(0, 4).map((project, index) => (
           <ToolCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import { styles } from "../../styles";
 import { github } from "../../assets";
@@ -18,8 +18,15 @@ const ToolCard = ({
   slug,
   source_code_link,
 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      ref={ref}
+      animate={isInView ? "show" : "hidden"}
+      variants={fadeIn("up", "spring", index * 0.05, 0.75)}
+    >
       <Link
         to={slug ? `/tools/${slug}` : "/"}
         className="flex items-center gap-2"
@@ -79,9 +86,15 @@ const ToolCard = ({
 };
 
 const Tools = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        ref={ref}
+        animate={isInView ? "show" : "hidden"}
+        variants={textVariant(0.1)}
+      >
         <p className={`${styles.sectionSubText} `}>Useful Tools</p>
         <h2 className={`${styles.sectionHeadText}`}>Tools.</h2>
       </motion.div>

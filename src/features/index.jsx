@@ -8,6 +8,8 @@ import AnimationGenerator from "./AnimationGenerator";
 import SolarSystem from "./SolarSystem";
 import CubeTraffic from "./CubeTraffic";
 import Tetris from "./Tetris";
+import PongGame from "./PongGame";
+import Stopwatch from "./Stopwatch";
 
 const featuresMap = {
   "box-shadow-generator": (props) => <BoxShadowGenerator {...props} />,
@@ -20,6 +22,10 @@ const featuresMap = {
   "solar-system": (props) => <SolarSystem {...props} />,
   "cube-traffic": (props) => <CubeTraffic {...props} />,
   tetris: (props) => <Tetris {...props} />,
+  "pong-game": (props) => <PongGame {...props} />,
+  "pong-game2": (props) => <PongGame {...props} />,
+  stopwatch: (props) => <Stopwatch {...props} />,
+  // "snake-game": (props) => <Stopwatch {...props} />,
 };
 
 export { BoxShadowGenerator, ClipPathGenerator, featuresMap };
