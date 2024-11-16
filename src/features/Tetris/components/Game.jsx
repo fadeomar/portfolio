@@ -9,7 +9,7 @@ const Game = ({ rows, columns }) => {
   const start = () => resetGameOver();
 
   return (
-    <div className="Game">
+    <div className="Game" style={{ marginTop: "76px", height: "100vh" }}>
       {gameOver ? (
         <Menu onClick={start} />
       ) : (

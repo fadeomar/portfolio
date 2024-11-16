@@ -29,6 +29,7 @@ import {
   wordsCountImg,
   scrabbleFeatured,
   CubeImage,
+  snakeImage,
 } from "../assets";
 
 export const navLinks = [
@@ -441,8 +442,8 @@ const tools = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Pong Game2",
-    slug: "pong-game2",
+    name: "Snake Game",
+    slug: "snake-game",
     description:
       "Clip Path Generator is very useful to generate css box shadows with all abilities to change the values and see the changes directly in the screen and copy the desired results you want or get some recommended values for box shadows you can use too try it now...",
     tags: [
@@ -450,15 +451,12 @@ const tools = [
       { name: "clip-spath", color: "green-text-gradient" },
       { name: "generator", color: "green-pink-gradient" },
     ],
-    image: CubeImage,
+    image: snakeImage,
     source_code_link: "https://github.com/",
   },
-];
-
-const games = [
   {
-    name: "Pong Game2",
-    slug: "pong-game2",
+    name: "Waves Generator",
+    slug: "waves-generator",
     description:
       "Clip Path Generator is very useful to generate css box shadows with all abilities to change the values and see the changes directly in the screen and copy the desired results you want or get some recommended values for box shadows you can use too try it now...",
     tags: [
@@ -466,7 +464,7 @@ const games = [
       { name: "clip-spath", color: "green-text-gradient" },
       { name: "generator", color: "green-pink-gradient" },
     ],
-    image: CubeImage,
+    image: snakeImage,
     source_code_link: "https://github.com/",
   },
 ];

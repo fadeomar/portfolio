@@ -10,6 +10,8 @@ import CubeTraffic from "./CubeTraffic";
 import Tetris from "./Tetris";
 import PongGame from "./PongGame";
 import Stopwatch from "./Stopwatch";
+import SnakeGame from "./SnakeGame";
+import WavesGenerator from "./WavesGenerator";
 
 const featuresMap = {
   "box-shadow-generator": (props) => <BoxShadowGenerator {...props} />,
@@ -23,9 +25,9 @@ const featuresMap = {
   "cube-traffic": (props) => <CubeTraffic {...props} />,
   tetris: (props) => <Tetris {...props} />,
   "pong-game": (props) => <PongGame {...props} />,
-  "pong-game2": (props) => <PongGame {...props} />,
   stopwatch: (props) => <Stopwatch {...props} />,
-  // "snake-game": (props) => <Stopwatch {...props} />,
+  "snake-game": (props) => <SnakeGame {...props} />,
+  "waves-generator": (props) => <WavesGenerator {...props} />,
 };
 
 export { BoxShadowGenerator, ClipPathGenerator, featuresMap };
