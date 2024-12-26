@@ -29,6 +29,7 @@ import {
   wordsCountImg,
   scrabbleFeatured,
   CubeImage,
+  snakeImage,
 } from "../assets";
 
 export const navLinks = [
@@ -405,7 +406,22 @@ const tools = [
     source_code_link: "https://github.com/",
   },
   {
+    name: "Pong Game",
+    slug: "pong-game",
+    description:
+      "Clip Path Generator is very useful to generate css box shadows with all abilities to change the values and see the changes directly in the screen and copy the desired results you want or get some recommended values for box shadows you can use too try it now...",
+    tags: [
+      { name: "css", color: "blue-text-gradient" },
+      { name: "clip-spath", color: "green-text-gradient" },
+      { name: "generator", color: "green-pink-gradient" },
+    ],
+    image: CubeImage,
+    source_code_link: "https://github.com/",
+  },
+
+  {
     name: "Car Rent",
+    slug: "car",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
@@ -423,6 +439,40 @@ const tools = [
       },
     ],
     image: carrent,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Snake Game",
+    slug: "snake-game",
+    description:
+      "Clip Path Generator is very useful to generate css box shadows with all abilities to change the values and see the changes directly in the screen and copy the desired results you want or get some recommended values for box shadows you can use too try it now...",
+    tags: [
+      { name: "css", color: "blue-text-gradient" },
+      { name: "clip-spath", color: "green-text-gradient" },
+      { name: "generator", color: "green-pink-gradient" },
+    ],
+    image: snakeImage,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Waves Generator",
+    slug: "waves-generator",
+    description:
+      "Clip Path Generator is very useful to generate css box shadows with all abilities to change the values and see the changes directly in the screen and copy the desired results you want or get some recommended values for box shadows you can use too try it now...",
+    tags: [
+      { name: "css", color: "blue-text-gradient" },
+      { name: "clip-spath", color: "green-text-gradient" },
+      { name: "generator", color: "green-pink-gradient" },
+    ],
+    image: snakeImage,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Trix Game",
+    slug: "trix-game",
+    description: "trix-game...",
+    tags: [{ name: "Game", color: "green-pink-gradient" }],
+    image: snakeImage,
     source_code_link: "https://github.com/",
   },
 ];

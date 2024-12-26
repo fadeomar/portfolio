@@ -14,14 +14,14 @@ import Navbar from "../../components/Navbar";
 const LandingPage = () => {
   return (
     <div className="relative z-0 bg-primary">
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center mb-11">
         <Navbar />
         <Hero />
       </div>
       <About />
-      <Experience />
-      <Tech />
-      <Works />
+      {/* <Experience /> */}
+      {/* <Tech /> */}
+      {/* <Works /> */}
       <Tools />
       {/* <Feedbacks /> */}
       <div className="relative z-0">

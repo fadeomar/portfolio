@@ -19,7 +19,7 @@ const highlightWords = (words, query) => {
 };
 
 const words = ["testable", "attest", "contest", "testing"];
-console.log(highlightWords(words, "test"));
+// console.log(highlightWords(words, "test"));
 
 function categorizeWords(inputText, wordArray) {
   const userInput = inputText.toLowerCase();

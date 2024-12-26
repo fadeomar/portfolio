@@ -10,9 +10,11 @@ const Previews = ({ tetrominoes }) => {
 
   return (
     <>
-      {previewTetrominoes.map((tetromino, index) => (
-        <Preview tetromino={tetromino} index={index} key={index} />
-      ))}
+      {[previewTetrominoes[0], previewTetrominoes[1]].map(
+        (tetromino, index) => (
+          <Preview tetromino={tetromino} index={index} key={index} />
+        )
+      )}
     </>
   );
 };
