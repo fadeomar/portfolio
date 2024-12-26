@@ -19,9 +19,9 @@ const LandingPage = () => {
         <Hero />
       </div>
       <About />
-      <Experience />
-      <Tech />
-      <Works />
+      {/* <Experience /> */}
+      {/* <Tech /> */}
+      {/* <Works /> */}
       <Tools />
       {/* <Feedbacks /> */}
       <div className="relative z-0">

@@ -467,6 +467,14 @@ const tools = [
     image: snakeImage,
     source_code_link: "https://github.com/",
   },
+  {
+    name: "Trix Game",
+    slug: "trix-game",
+    description: "trix-game...",
+    tags: [{ name: "Game", color: "green-pink-gradient" }],
+    image: snakeImage,
+    source_code_link: "https://github.com/",
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects, tools };

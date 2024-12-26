@@ -12,6 +12,7 @@ import PongGame from "./PongGame";
 import Stopwatch from "./Stopwatch";
 import SnakeGame from "./SnakeGame";
 import WavesGenerator from "./WavesGenerator";
+import TrixGame from "./TrixGame";
 
 const featuresMap = {
   "box-shadow-generator": (props) => <BoxShadowGenerator {...props} />,
@@ -28,6 +29,7 @@ const featuresMap = {
   stopwatch: (props) => <Stopwatch {...props} />,
   "snake-game": (props) => <SnakeGame {...props} />,
   "waves-generator": (props) => <WavesGenerator {...props} />,
+  "trix-game": (props) => <TrixGame {...props} />,
 };
 
 export { BoxShadowGenerator, ClipPathGenerator, featuresMap };

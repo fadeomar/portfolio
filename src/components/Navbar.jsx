@@ -9,7 +9,7 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const { pathname } = useLocation();
-  console.log({ pathname });
+  // console.log({ pathname });
   return (
     <nav
       className={`${styles.paddingX} w-full items-center py-5 fixed top-0 z-20 bg-primary`}
